@@ -1,62 +1,27 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, ScrollView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomePage from './App';
+import EchangesScreen from './EchangesScreen';
+import DefisScreen from './DefisScreen';
+import ArticlesScreen from './ArticlesScreen';
+import VideosScreen from './VideosScreen';
 
-const HomePage = ({ navigation }) => {
+const Stack = createStackNavigator();
+
+// Assurez-vous qu'il n'y a pas d'autre déclaration ou importation nommée 'App' dans ce fichier
+function AppNavigator() { // Renommez App en AppNavigator si App est déjà déclaré ailleurs
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>(RE)Sources Relationnelles</Text>
-      
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Échanges"
-          onPress={() => navigation.navigate('Echanges')}
-          color="#007BFF"
-        />
-      </View>
-      
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Défis"
-          onPress={() => navigation.navigate('Defis')}
-          color="#007BFF"
-        />
-      </View>
-      
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Articles"
-          onPress={() => navigation.navigate('Articles')}
-          color="#007BFF"
-        />
-      </View>
-      
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Vidéos"
-          onPress={() => navigation.navigate('Videos')}
-          color="#007BFF"
-        />
-      </View>
-    </ScrollView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomePage} options={{ title: '(RE)Sources Relationnelles' }} />
+        <Stack.Screen name="Echanges" component={EchangesScreen} />
+        <Stack.Screen name="Defis" component={DefisScreen} />
+        <Stack.Screen name="Articles" component={ArticlesScreen} />
+        <Stack.Screen name="Videos" component={VideosScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
+}
 
-const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  buttonContainer: {
-    width: '100%',
-    marginBottom: 10,
-  },
-});
-
-export default HomePage;
+export default AppNavigator; // Assurez-vous que l'exportation correspond au nouveau nom
