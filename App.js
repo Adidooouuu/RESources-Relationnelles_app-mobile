@@ -1,27 +1,29 @@
 import React from 'react';
+import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomePage from './App';
-import EchangesScreen from './EchangesScreen';
-import DefisScreen from './DefisScreen';
-import ArticlesScreen from './ArticlesScreen';
-import VideosScreen from './VideosScreen';
+import HomeEchanges from './src/screen/EchangesScreen';
+import HomeDefis from './src/screen/DefisScreen';
+import HomeArticles from './src/screen/ArticlesScreen';
+import HomeVideos from './src/screen/VideosScreen';
 
 const Stack = createStackNavigator();
 
-// Assurez-vous qu'il n'y a pas d'autre déclaration ou importation nommée 'App' dans ce fichier
-function AppNavigator() { // Renommez App en AppNavigator si App est déjà déclaré ailleurs
+
+function AppNavigator() { 
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomePage} options={{ title: '(RE)Sources Relationnelles' }} />
-        <Stack.Screen name="Echanges" component={EchangesScreen} />
-        <Stack.Screen name="Defis" component={DefisScreen} />
-        <Stack.Screen name="Articles" component={ArticlesScreen} />
-        <Stack.Screen name="Videos" component={VideosScreen} />
+        <Stack.Screen name="Echanges" component={HomeEchanges} />
+        <Stack.Screen name="Defis" component={HomeDefis} />
+        <Stack.Screen name="Articles" component={HomeArticles} />
+        <Stack.Screen name="Videos" component={HomeVideos} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-export default AppNavigator; // Assurez-vous que l'exportation correspond au nouveau nom
+export default AppNavigator; 
