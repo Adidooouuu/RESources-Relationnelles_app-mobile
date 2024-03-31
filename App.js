@@ -1,29 +1,13 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomePage from './App';
-import HomeEchanges from './src/screen/EchangesScreen';
-import HomeDefis from './src/screen/DefisScreen';
-import HomeArticles from './src/screen/ArticlesScreen';
-import HomeVideos from './src/screen/VideosScreen';
 
-const Stack = createStackNavigator();
+import NavigationBar from './src/taskbar/navigationBar';
 
-
-function AppNavigator() { 
+export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomePage} options={{ title: '(RE)Sources Relationnelles' }} />
-        <Stack.Screen name="Echanges" component={HomeEchanges} />
-        <Stack.Screen name="Defis" component={HomeDefis} />
-        <Stack.Screen name="Articles" component={HomeArticles} />
-        <Stack.Screen name="Videos" component={HomeVideos} />
-      </Stack.Navigator>
+      <NavigationBar />
     </NavigationContainer>
   );
 }
-
-export default AppNavigator; 
