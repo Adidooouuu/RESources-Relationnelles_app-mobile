@@ -65,7 +65,8 @@ const styles = StyleSheet.create({
     button_text: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: 'white'
+        color: 'white',
+        textTransform: 'uppercase'
     }
 });
 export default styles;
