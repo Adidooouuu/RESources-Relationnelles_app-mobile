@@ -12,18 +12,33 @@ import {
 */
 
 export default function CreateAccountScreen() {
+    const [alias, setAlias] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmedPassword, setConfirmedPassword] = useState("");
+    const handleAliasChange = (newAlias) => setAlias(newAlias);
     const handleEmailChange = (newEmail) => setEmail(newEmail);
     const handlePasswordChange = (newPassword) => setPassword(newPassword);
+    const handleConfirmedPasswordChange = (newConfirmedPassword) => setConfirmedPassword(newConfirmedPassword);
     const logoReSources = require('./assets/LogoReSources.png');
     return (
         <View style={styles.container}>
             <View style={styles.page_title_element}>
-                <Text style={styles.page_title}>Connexion</Text>
+                <Text style={styles.page_title}>Inscription</Text>
             </View>
             <Image source={logoReSources} />
             <View style={styles.text_input_group}>
+                <View style={styles.text_input_element}>
+                    <View style={styles.text_input_label}>
+                        <Text>Pseudonyme</Text>
+                        <Text style={styles.mandatory_input_sign}>*</Text>
+                    </View>
+                    <TextInput
+                        style={styles.text_input}
+                        value={alias}
+                        onChangeText={handleAliasChange}
+                    />
+                </View>
                 <View style={styles.text_input_element}>
                     <View style={styles.text_input_label}>
                         <Text>Identifiant</Text>
@@ -47,14 +62,25 @@ export default function CreateAccountScreen() {
                         onChangeText={handlePasswordChange}
                     />
                 </View>
+                <View style={styles.text_input_element}>
+                    <View style={styles.text_input_label}>
+                        <Text>Confirmer le mot de passe</Text>
+                        <Text style={styles.mandatory_input_sign}>*</Text>
+                    </View>
+                    <TextInput
+                        style={styles.text_input}
+                        value={confirmedPassword}
+                        secureTextEntry={true}
+                        onChangeText={handleConfirmedPasswordChange}
+                    />
+                </View>
             </View>
-            <Text style={styles.future_link}>Mot de passe oublié ?</Text>
             <TouchableOpacity style={styles.main_button}>
-                <Text style={styles.button_text}>Se connecter</Text>
+                <Text style={styles.button_text}>Créer le compte</Text>
             </TouchableOpacity>
             <View style={styles.cta_account}>
-                <Text>Nous ne nous connaissons pas ?</Text>
-                <Text style={styles.future_link}>Apprenons à nous connaître !</Text>
+                <Text>Nous nous connaissons déjà ?</Text>
+                <Text style={styles.future_link}>Un mot de passe et ça passe !</Text>
             </View>
         </View>
     );
@@ -87,7 +113,7 @@ const styles = StyleSheet.create({
         flex: 0,
         flexDirection: 'column',
         width: '100%',
-        gap: 40
+        gap: 20
     },
     text_input_element: {
         borderBottomWidth: 1,
@@ -118,12 +144,14 @@ const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: '#37B4A4',
         alignItems: 'center',
+        justifyContent: 'center',
         borderRadius: 15,
         padding: 20
     },
     button_text: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: 'white'
+        color: 'white',
+        textTransform: 'uppercase'
     }
 });
