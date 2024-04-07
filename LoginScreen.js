@@ -11,7 +11,7 @@ import {
 - use link when navigation is working
 */
 
-export default function LoginPage() {
+export default function LoginScreen() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const handleEmailChange = (newEmail) => setEmail(newEmail);
