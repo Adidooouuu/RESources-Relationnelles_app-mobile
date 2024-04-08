@@ -1,15 +1,15 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import HomeScreen from '../screens/HomeScreen';
+import HomeScreen from '../screen/AccueilScreen';
 
-import ProfilesScreen from '../screens/ProfilesScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import ProfilesScreen from '../screen/ProfilesScreen';
+import ProfileScreen from '../screen/ProfileScreen';
 
-import ResourcesScreen from '../screens/ResourcesScreen';
-import ResourceScreen from '../screens/ResourceScreen';
+import ResourcesScreen from '../screen/ResourcesScreen';
+import ResourceScreen from '../screen/ResourceScreen';
 
-import SearchScreen from '../screens/SearchScreen';
+import SearchScreen from '../screen/SearchScreen';
 
 import { colors } from '../styles/colors';
 
