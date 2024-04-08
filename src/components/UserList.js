@@ -7,8 +7,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 import UserCard from './UserCard';
 
-import { typography } from '../styles/typography';
-import { colors } from '../styles/colors';
+import { typography } from '../src/styles/typography';
+import { colors } from '../src/styles/colors';
 
 function UserList({ params, showInfo = true }) {
   const [users, setUsers] = useState([]);
