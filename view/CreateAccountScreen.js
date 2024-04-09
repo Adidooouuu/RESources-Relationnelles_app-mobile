@@ -20,7 +20,7 @@ export default function CreateAccountScreen() {
     const handleEmailChange = (newEmail) => setEmail(newEmail);
     const handlePasswordChange = (newPassword) => setPassword(newPassword);
     const handleConfirmedPasswordChange = (newConfirmedPassword) => setConfirmedPassword(newConfirmedPassword);
-    const logoReSources = require('./assets/adaptative-icon.png');
+    const logoReSources = require('../assets/LogoReSources.png');
     return (
         <View style={styles.container}>
             <View style={styles.page_title_element}>

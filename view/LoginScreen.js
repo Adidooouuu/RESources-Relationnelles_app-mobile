@@ -16,7 +16,7 @@ export default function LoginScreen() {
     const [password, setPassword] = useState("");
     const handleEmailChange = (newEmail) => setEmail(newEmail);
     const handlePasswordChange = (newPassword) => setPassword(newPassword);
-    const logoReSources = require('./assets/adaptative-icon.png');
+    const logoReSources = require('../assets/LogoReSources.png');
     return (
         <View style={styles.container}>
             <View style={styles.page_title_element}>
