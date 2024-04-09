@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import {
-    StyleSheet,
     Text,
     View,
     Image,
     TextInput,
     TouchableOpacity,
 } from "react-native";
-import styles from './assets/styling/registrationAndLoginProcessStyles.js'
+import styles from '../src/styling/registrationAndLoginProcessStyles.js'
 /* TODO : 
 - use link when navigation is working
 */
@@ -21,7 +20,7 @@ export default function CreateAccountScreen() {
     const handleEmailChange = (newEmail) => setEmail(newEmail);
     const handlePasswordChange = (newPassword) => setPassword(newPassword);
     const handleConfirmedPasswordChange = (newConfirmedPassword) => setConfirmedPassword(newConfirmedPassword);
-    const logoReSources = require('./assets/LogoReSources.png');
+    const logoReSources = require('./assets/adaptative-icon.png');
     return (
         <View style={styles.container}>
             <View style={styles.page_title_element}>
