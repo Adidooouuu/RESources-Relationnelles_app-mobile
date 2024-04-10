@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "RessourcesRelationnelles",
-    "slug": "RessourcesRelationnelles",
+    "name": "R(RE)",
+    "slug": "rr_mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.sefascinant.rr_mobile"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d0a2f72b-2e81-4f87-a74e-ef58ec1f407c"
+      }
     }
   }
 }
